@@ -48,7 +48,12 @@ int main()
 
             for(k=0;k<9;k++)
             {
-                if ((a[i][k]==x) || (a[k][j]==x))
+                if(x==0)
+                {
+                    k=k-1;
+                    x = rand() % 10;  
+                }
+                else if ((a[i][k]==x) || (a[k][j]==x))
                 {
                     k=k-1;
                     x = rand() % 10;
