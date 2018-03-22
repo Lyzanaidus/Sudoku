@@ -46,7 +46,7 @@ int main()
             //getch();
             k=0;
 
-            do
+            for(k=0;k<9;k++)
             {
                 if ((a[i][k]==x) || (a[k][j]==x))
                 {
@@ -63,11 +63,8 @@ int main()
                         cout<<"\n\t\tSince a["<<k+1<<"]["<<j+1<<"] = "<<a[k][j]<<" = "<<x;
                         cout<<"\n\t\t   Thus a["<<i+1<<"]["<<j+1<<"] = "<<x;
                     }
-
                 }
-
-                k++;
-            }while(k<9);
+            }
 
             a[i][j]=x;
         }
