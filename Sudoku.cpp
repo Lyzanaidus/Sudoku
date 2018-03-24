@@ -40,38 +40,57 @@ int main()
     {
         for(j=0;j<9;j++)
         {
+            cout<<"\n\t\tFor [i,j] = ["<<i+1<<"]["<<j+1<<"]";
+                    
             // generating pseudo-random number between 1 and 9 using time
             x = rand() % 10;
-            cout<<"\n\ta["<<i+1<<"]["<<j+1<<"] = "<<x;
+            cout<<"\n\t\t\tx = "<<x;
             //getch();
-            k=0;
-
-            for(k=0;k<9;k++)
+            
+            if(a[i][j]==0)
             {
-                if(x==0)
+                do
                 {
-                    k=k-1;
-                    x = rand() % 10;  
-                }
-                else if ((a[i][k]==x) || (a[k][j]==x))
-                {
-                    k=k-1;
+                    cout<<"\n\t\t\tSince x = "<<x;
                     x = rand() % 10;
-
-                    if ((a[i][k]==x))
+                }while(x==0);
+                
+                for(k=0;k<9;k++)
+                {
+                    int c=0,n=0;
+                    
+                    cout<<"\n\t\t\tx = "<<x<<"\t k = "<<k;
+                    
+                    if(x==a[i][k])
                     {
-                        cout<<"\n\t\tSince a["<<i+1<<"]["<<k+1<<"] = "<<a[i][k]<<" = "<<x;
-                        cout<<"\n\t\t   Thus a["<<i+1<<"]["<<j+1<<"] = "<<x;
+                        c++;
+                        cout<<"\n\t\t\t\tSince a["<<i+1<<"]["<<k+1<<"] = "<<a[i][k]<<" == x = "<<x;
                     }
-                    else if ((a[k][j]==x))
+                    if(x==a[k][j])
                     {
-                        cout<<"\n\t\tSince a["<<k+1<<"]["<<j+1<<"] = "<<a[k][j]<<" = "<<x;
-                        cout<<"\n\t\t   Thus a["<<i+1<<"]["<<j+1<<"] = "<<x;
+                        c++;
+                        cout<<"\n\t\t\t\tSince a["<<k+1<<"]["<<j+1<<"] = "<<a[k][j]<<" == x = "<<x;
                     }
+                    
+                    if(c>0)
+                    {
+                        k=-1;
+                        n=x;
+                        
+                        do
+                        {
+                            x = rand() % 10;
+                        }while(x==0 || x==n);
+                    }
+                    
                 }
+                a[i][j]=x;
+                cout<<"\n\t->>A["<<i+1<<"]["<<j+1<<"] = "<<x;
             }
 
-            a[i][j]=x;
+            
+
+            
         }
     }
 
