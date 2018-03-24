@@ -40,7 +40,8 @@ int main()
     {
         for(j=0;j<9;j++)
         {
-            cout<<"\n\t\tFor [i,j] = ["<<i+1<<"]["<<j+1<<"]";
+            cout<<"-----------------------------------------------------------------------------------------\n";
+            cout<<"\n\n\n\t\tFor [i,j] = ["<<i+1<<"]["<<j+1<<"]";
                     
             // generating pseudo-random number between 1 and 9 using time
             x = rand() % 10;
@@ -59,7 +60,7 @@ int main()
                 {
                     int c=0,n=0;
                     
-                    cout<<"\n\t\t\tx = "<<x<<"\t k = "<<k;
+                    cout<<"\n\t\t\t["<<i+1<<"]["<<j+1<<"] >> \t x = "<<x<<"\t k = "<<k;
                     
                     if(x==a[i][k])
                     {
